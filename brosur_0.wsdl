@@ -28,6 +28,24 @@
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>
+      <xsd:element name="in">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="namabarang" type="xsd:string"></xsd:element>
+      			<xsd:element name="namavendor" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="out">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="namabarang" type="xsd:string"></xsd:element>
+      			<xsd:element name="namavendor" type="xsd:string"></xsd:element>
+      			<xsd:element name="qty" type="xsd:string"></xsd:element>
+      			<xsd:element name="harga" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="helloRequest">
@@ -57,6 +75,12 @@
     <wsdl:message name="setMhsResponse">
     	<wsdl:part name="setMhsResponse" type="xsd:string"></wsdl:part>
     </wsdl:message>
+    <wsdl:message name="cekbarangdetailRequest">
+    	<wsdl:part name="cekbarangdetailRequest" element="tns:in"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="cekbarangdetailResponse">
+    	<wsdl:part name="cekbarangdetailResponse" element="tns:out"></wsdl:part>
+    </wsdl:message>
     <wsdl:portType name="brosur_0">
     <wsdl:operation name="hello">
       <wsdl:input message="tns:helloRequest"/>
@@ -78,53 +102,83 @@
     	<wsdl:input message="tns:setMhsRequest"></wsdl:input>
     	<wsdl:output message="tns:setMhsResponse"></wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="cekbarangdetail">
+    	<wsdl:input message="tns:cekbarangdetailRequest"></wsdl:input>
+    	<wsdl:output message="tns:cekbarangdetailResponse"></wsdl:output>
+    </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="brosur_0SOAP" type="tns:brosur_0">
+
     	<soap:binding style="document"
     		transport="http://schemas.xmlsoap.org/soap/http" />
     	<wsdl:operation name="hello">
+
     		<soap:operation
     			soapAction="http://www.example.org/brosur_0/hello" />
     		<wsdl:input>
+
     			<soap:body use="literal" />
     		</wsdl:input>
     		<wsdl:output>
+
     			<soap:body use="literal" />
     		</wsdl:output>
     	</wsdl:operation>
     	<wsdl:operation name="cekBarang">
+
     		<soap:operation
     			soapAction="http://www.example.org/brosur_0/cekBarang" />
     		<wsdl:input>
+
     			<soap:body use="literal" />
     		</wsdl:input>
     		<wsdl:output>
+
     			<soap:body use="literal" />
     		</wsdl:output>
     	</wsdl:operation>
     	<wsdl:operation name="tambah">
+
     		<soap:operation
     			soapAction="http://www.example.org/brosur_0/tambah" />
     		<wsdl:input>
+
     			<soap:body use="literal" />
     		</wsdl:input>
     		<wsdl:output>
+
     			<soap:body use="literal" />
     		</wsdl:output>
     	</wsdl:operation>
     	<wsdl:operation name="info">
+
     		<soap:operation
     			soapAction="http://www.example.org/brosur_0/info" />
     		<wsdl:input>
+
     			<soap:body use="literal" />
     		</wsdl:input>
     		<wsdl:output>
+
     			<soap:body use="literal" />
     		</wsdl:output>
     	</wsdl:operation>
     	<wsdl:operation name="setMhs">
+
     		<soap:operation
     			soapAction="http://www.example.org/brosur_0/setMhs" />
+    		<wsdl:input>
+
+    			<soap:body use="literal" />
+    		</wsdl:input>
+    		<wsdl:output>
+
+    			<soap:body use="literal" />
+    		</wsdl:output>
+    	</wsdl:operation>
+    	<wsdl:operation name="cekbarangdetail">
+    		<soap:operation
+    			soapAction="http://www.example.org/brosur_0/cekbarangdetail" />
     		<wsdl:input>
     			<soap:body use="literal" />
     		</wsdl:input>

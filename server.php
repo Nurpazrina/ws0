@@ -48,6 +48,17 @@ class MyWs{
 		return 'selamat Anda telah terdaftar: '.$nama.' dan jml sks='.$sks;
 	}
 	
+	function cekbarangdetail($in){
+	$clien2 = $in->namabarang;
+	$clienb = $in->namavendor;
+	
+	$output->namabarang = 'sendal';
+	$output->namavendor ='swallow';
+	$output->qty = 1;
+	$output->harga = '1000000';
+	
+	return $output;
+	}
 }
 	
 //ini_set("soap.wsdl_cache_enabled", 0);

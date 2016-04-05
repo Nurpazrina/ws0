@@ -45,6 +45,18 @@ echo '<p>';
 echo $client2->setMhs($data);
 echo '</p>';
 
+//eksekusi servis cekbarangdetail
+$in = array('namabarang'=>'sendal','namavendor'=>'swallow');
+$client2->cekbarangdetail($in);
+echo '<p>';
+echo 'nama barang = '. $client2->cekbarangdetail()->namabarang;
+echo '</br>';
+echo 'nama vendor = '. $client2->cekbarangdetail()->namavendor;
+echo '</br>';
+echo 'qty = '. $client2->cekbarangdetail()->qty;
+echo '</br>';
+echo 'harga = '. $client2->cekbarangdetail()->harga;
+echo '</p>';
 //echo '<br>'.'--------------------'.'<br>';
 //var_dump($client2->__getLastResponse());
 echo '<br>'.'--------------------'.'<br>';
